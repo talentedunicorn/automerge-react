@@ -10,6 +10,8 @@ You may want to run a sync server to handle remote sync; this can be done (in de
 
 Simply run `PORT=[SERVER_PORT] DATA_DIR=[DIR_ON_SERVER_TO_STORE_DATA] npx @automerge/automerge-repo-sync-server` to start an Express server with websocket at `ws://localhost:[PORT]`
 
+**Note** Running `pnpm dev` will also run a sync server on `ws://localhost:4000`
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:

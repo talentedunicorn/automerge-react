@@ -13,7 +13,7 @@ import './index.css'
 const repo = new Repo({
   network: [
     new BroadcastChannelNetworkAdapter(),
-    new BrowserWebSocketClientAdapter('wss://sync.automerge.org') // Replace with production websocket
+    new BrowserWebSocketClientAdapter('ws://localhost:4000') // Replace with production websocket
   ],
   storage: new IndexedDBStorageAdapter(),
 })
