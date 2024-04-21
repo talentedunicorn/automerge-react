@@ -17,6 +17,9 @@ importers:
       '@automerge/automerge-repo-network-broadcastchannel':
         specifier: ^1.1.5
         version: 1.1.5(@types/node@20.12.7)(typescript@5.4.5)
+      '@automerge/automerge-repo-network-websocket':
+        specifier: ^1.1.5
+        version: 1.1.5(@types/node@20.12.7)(typescript@5.4.5)
       '@automerge/automerge-repo-react-hooks':
         specifier: ^1.1.5
         version: 1.1.5(@types/node@20.12.7)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.4.5)
@@ -76,6 +79,9 @@ packages:
 
   '@automerge/automerge-repo-network-broadcastchannel@1.1.5':
     resolution: {integrity: sha512-2w2J+vC3Pu1s19mhrbvvCVHpybMFNE1/a12mT1m/EMcvr2VDfsbrs61XSh4uf4PRDnfscf5A7JyH/0Lod4Yd4w==}
+
+  '@automerge/automerge-repo-network-websocket@1.1.5':
+    resolution: {integrity: sha512-RYnN9h71zSCaqZBDnFdO4gcS5XgC1yvFUpwEgeUllL8jHlhDeCetdQR8JjUFttxRoxqRrJyd2TfH7K7tJjkXBQ==}
 
   '@automerge/automerge-repo-react-hooks@1.1.5':
     resolution: {integrity: sha512-iwEusroukIZbaKkZ9sc/AWGOhgrpeG8kGzXOma4Vc6a/XvOpDVBBYkFyWYb+CJq1mGQkFJ4XE2uoPDWAsydNrw==}
@@ -967,6 +973,11 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
+  isomorphic-ws@5.0.0:
+    resolution: {integrity: sha512-muId7Zzn9ywDsyXgTIafTry2sV3nySZeUDe6YedVd1Hvuuep5AsIlqK+XefWpYTyJG5e503F2xIuT2lcU6rCSw==}
+    peerDependencies:
+      ws: '*'
+
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -1300,6 +1311,18 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
+  ws@8.16.0:
+    resolution: {integrity: sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
   xstate@4.38.3:
     resolution: {integrity: sha512-SH7nAaaPQx57dx6qvfcIgqKRXIh4L0A1iYEqim4s1u7c9VoCgzZc+63FY90AKU4ZzOC2cfJzTnpO4zK7fCUzzw==}
 
@@ -1335,6 +1358,23 @@ snapshots:
       - '@types/node'
       - supports-color
       - typescript
+
+  '@automerge/automerge-repo-network-websocket@1.1.5(@types/node@20.12.7)(typescript@5.4.5)':
+    dependencies:
+      '@automerge/automerge-repo': 1.1.5(@types/node@20.12.7)(typescript@5.4.5)
+      cbor-x: 1.5.9
+      debug: 4.3.4
+      eventemitter3: 5.0.1
+      isomorphic-ws: 5.0.0(ws@8.16.0)
+      ws: 8.16.0
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - '@types/node'
+      - bufferutil
+      - supports-color
+      - typescript
+      - utf-8-validate
 
   '@automerge/automerge-repo-react-hooks@1.1.5(@types/node@20.12.7)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.4.5)':
     dependencies:
@@ -2257,6 +2297,10 @@ snapshots:
 
   isexe@2.0.0: {}
 
+  isomorphic-ws@5.0.0(ws@8.16.0):
+    dependencies:
+      ws: 8.16.0
+
   js-tokens@4.0.0: {}
 
   js-yaml@4.1.0:
@@ -2537,6 +2581,8 @@ snapshots:
       isexe: 2.0.0
 
   wrappy@1.0.2: {}
+
+  ws@8.16.0: {}
 
   xstate@4.38.3: {}
 

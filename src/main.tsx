@@ -5,12 +5,16 @@ import { BroadcastChannelNetworkAdapter } from '@automerge/automerge-repo-networ
 import { IndexedDBStorageAdapter } from '@automerge/automerge-repo-storage-indexeddb'
 import { next as A } from '@automerge/automerge'
 import { RepoContext } from '@automerge/automerge-repo-react-hooks'
+import { BrowserWebSocketClientAdapter } from '@automerge/automerge-repo-network-websocket'
 import App from './App.tsx'
 import './index.css'
 
 // Create automerge repo
 const repo = new Repo({
-  network: [new BroadcastChannelNetworkAdapter()],
+  network: [
+    new BroadcastChannelNetworkAdapter(),
+    new BrowserWebSocketClientAdapter('wss://sync.automerge.org') // Replace with production websocket
+  ],
   storage: new IndexedDBStorageAdapter(),
 })
 
