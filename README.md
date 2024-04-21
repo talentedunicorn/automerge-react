@@ -1,11 +1,14 @@
-# React + TypeScript + Vite
+# React + Automerge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app is a simple button with incremental counter using [Automerge](https://automerge.org/) for local and remote synchronization of data.
 
-Currently, two official plugins are available:
+See [quickstart guide](https://automerge.org/docs/quickstart/) for more details.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running your own sync server
+
+You may want to run a sync server to handle remote sync; this can be done (in development) using [automerge-repo-sync-server](https://github.com/automerge/automerge-repo-sync-server) package.
+
+Simply run `PORT=[SERVER_PORT] DATA_DIR=[DIR_ON_SERVER_TO_STORE_DATA] npx @automerge/automerge-repo-sync-server` to start an Express server with websocket at `ws://localhost:[PORT]`
 
 ## Expanding the ESLint configuration
 
